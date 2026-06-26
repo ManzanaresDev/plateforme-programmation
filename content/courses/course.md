@@ -419,6 +419,232 @@ print("Monstre vaincu !")
 
 ---
 
+# Projet 21 - Inverser une chaîne
+
+```python
+mot = input("Entre un mot : ")
+
+print(mot[::-1])
+```
+
+## Exercice
+
+Vérifier si le mot est un palindrome :
+
+```text
+"kayak" -> C'est un palindrome !
+"python" -> Ce n'est pas un palindrome.
+```
+
+---
+
+# Projet 22 - Convertisseur d'unités
+
+```python
+def km_vers_miles(km):
+    return km * 0.621371
+
+distance = float(input("Distance en km : "))
+
+print(distance, "km =", km_vers_miles(distance), "miles")
+```
+
+## Exercice
+
+Ajouter d'autres conversions :
+
+- Celsius → Fahrenheit
+- Kilos → Livres
+- Euros → Dollars (avec un taux fixe)
+
+---
+
+# Projet 23 - Compteur de mots
+
+```python
+texte = input("Entre une phrase : ")
+
+mots = texte.split()
+
+print("Nombre de mots :", len(mots))
+```
+
+## Exercice
+
+Afficher aussi :
+
+- Le nombre de caractères (sans espaces)
+- Le mot le plus long
+
+---
+
+# Projet 24 - Table de multiplication
+
+```python
+def table(n):
+    for i in range(1, 11):
+        print(n, "x", i, "=", n * i)
+
+nombre = int(input("Quelle table ? "))
+table(nombre)
+```
+
+## Exercice
+
+Afficher toutes les tables de 1 à 10 dans un tableau.
+
+---
+
+# Projet 25 - Mini Quiz
+
+```python
+score = 0
+
+questions = [
+    ("Quelle est la capitale de la France ?", "paris"),
+    ("Combien font 7 x 8 ?", "56"),
+    ("Quel est le plus grand océan ?", "pacifique"),
+]
+
+for question, bonne_reponse in questions:
+    reponse = input(question + " ").lower()
+    if reponse == bonne_reponse:
+        print("Correct !")
+        score += 1
+    else:
+        print("Faux. Réponse :", bonne_reponse)
+
+print("Score :", score, "/", len(questions))
+```
+
+## Exercice
+
+Ajouter 5 questions et afficher un message selon le score.
+
+---
+
+# Projet 26 - Dictionnaire Python
+
+```python
+contacts = {
+    "Lucas": "06 12 34 56 78",
+    "Emma": "07 98 76 54 32",
+}
+
+nom = input("Chercher un contact : ")
+
+if nom in contacts:
+    print("Numéro :", contacts[nom])
+else:
+    print("Contact introuvable.")
+```
+
+## Exercice
+
+Permettre d'ajouter et de supprimer des contacts.
+
+---
+
+# Projet 27 - Générateur de mot de passe
+
+```python
+import random
+import string
+
+longueur = int(input("Longueur du mot de passe : "))
+
+caracteres = string.ascii_letters + string.digits + "!@#$%"
+
+mot_de_passe = "".join(
+    random.choice(caracteres) for _ in range(longueur)
+)
+
+print("Mot de passe :", mot_de_passe)
+```
+
+## Exercice
+
+Permettre à l'utilisateur de choisir s'il veut des chiffres et/ou des symboles.
+
+---
+
+# Projet 28 - Chronomètre
+
+```python
+import time
+
+input("Appuie sur Entrée pour démarrer...")
+debut = time.time()
+
+input("Appuie sur Entrée pour arrêter...")
+fin = time.time()
+
+duree = fin - debut
+print(f"Temps écoulé : {duree:.2f} secondes")
+```
+
+## Exercice
+
+Afficher le temps en minutes et secondes si la durée dépasse 60 secondes.
+
+---
+
+# Projet 29 - Tri de liste
+
+```python
+nombres = []
+
+print("Entre 5 nombres (un par un) :")
+for i in range(5):
+    n = int(input(f"Nombre {i+1} : "))
+    nombres.append(n)
+
+print("Liste originale :", nombres)
+print("Triée (croissant) :", sorted(nombres))
+print("Triée (décroissant) :", sorted(nombres, reverse=True))
+print("Min :", min(nombres))
+print("Max :", max(nombres))
+```
+
+---
+
+# Projet 30 - Jeu du pendu (version simple)
+
+```python
+import random
+
+mots = ["python", "programmation", "ordinateur", "variable", "fonction"]
+mot = random.choice(mots)
+lettres_trouvees = []
+essais = 6
+
+while essais > 0:
+    affichage = " ".join(
+        lettre if lettre in lettres_trouvees else "_"
+        for lettre in mot
+    )
+    print(affichage)
+
+    if "_" not in affichage:
+        print("Bravo, tu as gagné !")
+        break
+
+    lettre = input("Propose une lettre : ").lower()
+
+    if lettre in lettres_trouvees:
+        print("Déjà proposée !")
+    elif lettre in mot:
+        print("Bonne lettre !")
+        lettres_trouvees.append(lettre)
+    else:
+        essais -= 1
+        print(f"Raté ! Il te reste {essais} essai(s).")
+else:
+    print("Perdu ! Le mot était :", mot)
+```
+
+---
+
 # Défi Final : Gestionnaire de tâches
 
 Créer un programme capable de :
