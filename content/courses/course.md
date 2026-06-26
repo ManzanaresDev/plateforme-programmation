@@ -645,7 +645,169 @@ else:
 
 ---
 
-# Défi Final : Gestionnaire de tâches
+# Défi 31 - Carnet de contacts
+
+Créer un programme permettant de :
+
+- Ajouter un contact
+- Modifier un contact
+- Supprimer un contact
+- Rechercher un contact
+- Afficher tous les contacts
+
+Les contacts seront stockés dans un dictionnaire.
+
+Exemple :
+
+Lucas : 06 12 34 56 78
+Emma : 07 98 76 54 32
+
+# Défi 32 - Statistiques sur des notes
+
+Demander plusieurs notes.
+
+Afficher :
+
+- la moyenne
+- la meilleure note
+- la moins bonne
+- le nombre de notes
+- le nombre de notes supérieures à 10
+- le nombre de notes inférieures à 10
+
+Bonus :
+
+Afficher les notes triées.
+
+# Défi 33 - Inventaire d'un magasin
+
+Créer un dictionnaire contenant :
+
+- le nom du produit
+- la quantité
+
+Exemple :
+
+Pommes : 15
+Bananes : 8
+Lait : 20
+
+Le programme doit permettre :
+
+- d'ajouter un produit
+- d'en retirer
+- de modifier une quantité
+- d'afficher l'inventaire
+
+# Défi 34 - Analyse d'un texte
+
+Demander une phrase.
+
+Afficher :
+
+- le nombre de mots
+- le nombre de caractères
+- le mot le plus long
+- le mot le plus court
+- le mot apparaissant le plus souvent
+
+Bonus :
+
+Afficher la fréquence de chaque mot.
+
+# Défi 35 - Gestionnaire d'élèves
+
+Créer une liste contenant plusieurs élèves.
+
+Chaque élève possède :
+
+- prénom
+- âge
+- moyenne
+
+Exemple :
+
+[
+{
+"nom": "Lucas",
+"age": 15,
+"moyenne": 14.5
+}
+]
+
+Le programme doit permettre :
+
+- ajouter un élève
+- supprimer un élève
+- modifier une moyenne
+- rechercher un élève
+- afficher les élèves triés par moyenne
+
+# Défi 36 - Lecture d'un fichier CSV
+
+Créer un fichier :
+
+nom,age,ville
+Lucas,15,Lille
+Emma,16,Paris
+Noah,17,Lyon
+
+Lire le fichier puis afficher :
+
+- le nombre de personnes
+- leur âge moyen
+- la liste des villes
+
+# Défi 37 - Tableau de bord
+
+À partir d'une liste de ventes :
+
+[150, 230, 80, 420, 110]
+
+Afficher :
+
+- total
+- moyenne
+- maximum
+- minimum
+- nombre de ventes
+- ventes supérieures à la moyenne
+
+Bonus :
+
+Afficher un histogramme en texte.
+
+Exemple :
+
+150 : #######
+230 : ###########
+80 : ####
+420 : ####################
+
+# Projet Final 1 - Gestionnaire de données
+
+Créer une application capable de :
+
+- Ajouter des données
+- Modifier des données
+- Supprimer des données
+- Rechercher
+- Trier
+- Filtrer
+- Sauvegarder dans un fichier JSON
+- Recharger automatiquement les données au démarrage
+
+Exemple :
+
+1 - Ajouter
+2 - Modifier
+3 - Supprimer
+4 - Rechercher
+5 - Trier
+6 - Sauvegarder
+7 - Quitter
+
+# Défi Final 2 : Gestionnaire de tâches
 
 Créer un programme capable de :
 
