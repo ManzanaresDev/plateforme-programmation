@@ -128,19 +128,24 @@
   }
 }
 
-/* ─── Layout ─────────────────────────────────── */
+/* ─── Layout desktop : sandbox gauche | contenu droite ─── */
 
-.layout {
-  display: grid !important;
-  grid-template-rows: 50vh 50vh !important;
-  height: 100vh;
+.layout-desktop {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100dvh;
   overflow: hidden;
 }
 
 .layout-bottom {
-  display: grid !important;
-  grid-template-columns: 35% 65% !important;
+  display: grid;
+  grid-template-columns: 35% 65%;
   overflow: hidden;
+  height: 100dvh;
+}
+
+.layout-mobile {
+  display: none;
 }
 
 /* ─── Sidebar ─────────────────────────────────── */
@@ -280,9 +285,10 @@
   display: flex;
   flex-direction: column;
   background: #0f1117;
-  border-bottom: 1px solid #1e2130;
+  border-right: 1px solid #1e2130;
   overflow: hidden;
   width: 100%;
+  height: 100dvh;
 }
 
 .sandbox-header {
@@ -297,6 +303,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .sandbox-header::before {
@@ -447,17 +454,7 @@ iframe {
   margin-top: 4px;
 }
 
-/* ─── Responsive : desktop / mobile ─────────────────────────────────── */
-
-.layout-desktop {
-  display: flex;
-  flex-direction: column;
-  height: 100dvh;
-}
-
-.layout-mobile {
-  display: none;
-}
+/* ─── Responsive mobile ─────────────────────────────────── */
 
 @media (max-width: 768px) {
   .layout-desktop {
@@ -507,14 +504,10 @@ iframe {
     padding: 2px 8px;
   }
 
-  /* ─── Contenu scrollable ─── */
-
   .mobile-content {
     flex: 1;
     overflow-y: auto;
   }
-
-  /* ─── Onglets du bas ─── */
 
   .mobile-tabs {
     display: flex;
@@ -537,8 +530,6 @@ iframe {
     font-weight: 500;
   }
 
-  /* ─── Drawer ─── */
-
   .mobile-overlay {
     position: fixed;
     inset: 0;
@@ -557,8 +548,6 @@ iframe {
     overflow-y: auto;
     border-right: 1px solid var(--border);
   }
-
-  /* ─── Navigation cours mobile ─── */
 
   .course-nav {
     flex-direction: column;
@@ -581,12 +570,10 @@ iframe {
     flex: 1;
   }
 
-  /* ─── Sandbox plein écran mobile ─── */
-
   .sandbox-fullscreen {
     display: flex;
     flex-direction: column;
-    height: calc(100dvh - 48px - 52px); /* topbar 48px + tabbar 52px */
+    height: calc(100dvh - 48px - 52px);
   }
 
   .sandbox-fullscreen .sandbox-header {
